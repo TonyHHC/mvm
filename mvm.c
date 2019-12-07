@@ -54,12 +54,15 @@ void mvm_insert(mvm* m, char* key, char* data)
 char* mvm_print(mvm* m)
 {
 	mvmcell *p;
+	
+	char *strResult;
+	char *strTmp;
 
 	if (m == NULL)
 		return NULL;
 
-	char *strResult = (char*)malloc(10000 * sizeof(char));
-	char *strTmp = (char*)malloc(100 * sizeof(char));
+	strResult = (char*)malloc(10000 * sizeof(char));
+	strTmp = (char*)malloc(100 * sizeof(char));
 	sprintf(strResult, "");
 
 	p = m->head;
